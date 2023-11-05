@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="styles.css">
+     <title>Document</title>
+</head>
+<body>
+      <div id="workshopDetailsForm">
+            <h2>Workshop Details</h2>
+            <form action="/workshopdetails" method="POST">
+                <label for="actualDateOfCompletion">Actual Date of Completion:</label>
+                <input type="date" id="actualDateOfCompletion" name="actualDateOfCompletion">
+
+                <label for="jobNumber">Job No:</label>
+                <input type="text" id="jobNumber" name="jobNumber">
+
+                <label for="quantityWorkshop">Quantity:</label>
+                <input type="text" id="quantityWorkshop" name="quantityWorkshop" placeholder="Enter Quantity">
+
+                <label for="workshopIncharge">Name of Workshop Incharge:</label>
+                <select id="workshopIncharge" name="workshopIncharge">
+                    <option value="1">Viren Shah</option>
+                    <option value="2">Dipak R Parmar</option>
+                    <option value="3">Jaypal</option>
+                    <!-- Add more workshop incharge options here -->
+                </select>
+
+                <label for="jobOrganizer">Job Organizer:</label>
+                <input type="text" id="jobOrganizer" name="jobOrganizer">
+
+                <label for="materialUsed">Material Used:</label>
+                <input type="text" id="materialUsed" name="materialUsed">
+
+                <label for="jobCompletedDate">Job Completed Date:</label>
+                <input type="date" id="jobCompletedDate" name="jobCompletedDate">
+
+                <button type="submit">Submit Workshop Details</button>
+                <!-- <button type="button" onclick="showForms()">Back to Forms</button> -->
+                <button type="button" onclick="showForms()">
+                  <a href="/backtoform">Back to Forms</a>  
+                </button>
+            </form>
+        </div>
+</body>
+</html>

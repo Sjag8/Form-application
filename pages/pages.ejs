@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WorkShop Inventory Manager</title>
+    <link rel="stylesheet" type="text/css" href="styleIT.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 70%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"],
+        input[type="date"],
+        select,
+        textarea,
+        input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        select {
+            background-color: #fff;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        h2 {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px;
+            margin-top: 20px;
+        }
+        .container {
+            width: 70%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            position: relative; /* Add this for positioning the logo */
+        }
+
+
+        @media (max-width: 768px) {
+            .container {
+                width: 90%;
+            }
+        }
+        /* Add this CSS for the logo */
+        #logo {
+           position:Sidebar;
+           top: 20px;
+           right: 20px;
+           width: 100px; /* Adjust the width as needed */
+           height: auto; /* Maintain the aspect ratio */
+}
+    </style>
+</head>
+<body>
+    <img src="Desktop/mylogo.png" alt="Logo" id="logo"> <!-- Add this line for the logo -->
+   
+    <div class="container">
+        <h1>Workshop Inventory Manager</h1>
+
+        <!-- Login Page (Initially shown) -->
+        <div id="loginPage">
+            <h2>Login</h2>
+            <form action="/workshop" method="POST" >
+                <label for="username">Name:</label>
+                <input type="text" id="username" name="username" required placeholder="Enter your name">
+
+                <label for="employeeId">Birla Copper Employee ID:</label>
+                <input type="text" id="employeeId" name="employeeId" required placeholder="Enter your Employee ID">
+
+                <label for="mobileNumber">Mobile Number:</label>
+                <input type="text" id="mobileNumber" name="mobileNumber" required placeholder="Enter your mobile number">
+
+                <label for="email">Email ID:</label>
+                <input type="text" id="email" name="email" required placeholder="Enter your email">
+
+                <!-- <button type="button" onclick="showForms()">Continue to Forms</button> -->
+                <button type = "submit" >Continue to Forms</button>
+            </form>
+        </div>
+
+        <!-- Form Buttons (Initially hidden) -->
+        <div id="formButtons" style="display: none">
+            <button id="jobSlipButton" onclick="showJobSlipForm()">Job Slip</button>
+            <button id="workshopDetailsButton" onclick="showWorkshopDetailsForm()">Workshop Details</button>
+            <button id="backToLoginButton" onclick="showLoginPage()">Back to Login Page</button>
+        </div>
+
+        <!-- Job Slip Form (Initially hidden) -->
+        <div id="jobSlipForm" style="display: none;">
+            <h2>Job Slip</h2> 
+            <form action="submit_job_slip.php" method="post">
+                <label for="department">Department:</label>
+                <input type="text" id="jobRequisitionNo" name="jobRequisitionNo">
+                </select>
+
+                <label for="jobOriginationDate">Job Origination Date:</label>
+                <input type="date" id="jobOriginationDate" name="jobOriginationDate">
+
+                <label for="jobRequiredDate">Job Required Date:</label>
+                <input type="date" id="jobRequiredDate" name="jobRequiredDate">
+
+                <label for="material">Material:</label>
+                <input type="text" id="material" name "material">
+
+                <label for="quantity">Quantity:</label>
+                <input type="text" id="quantity" name="quantity" placeholder="Enter Quantity">
+
+                <label for="jobDescription">Job Description:</label>
+                <textarea id="jobDescription" name="jobDescription"></textarea>
+
+                <label for="jobDrawing">Add Job Drawing/Picture:</label>
+                <input type="file" id="jobDrawing" name="jobDrawing">
+
+                <button type="submit">Submit Job Slip</button>
+                <button type="button" onclick="showForms()">Back to Forms</button>
+            </form>
+        </div>
+
+
+
+        <!-- Workshop Details Form (Initially hidden) -->
+        <div id="workshopDetailsForm" style="display: none;">
+            <h2>Workshop Details</h2>
+            <form action="submit_workshop_details.php" method="post">
+                <label for="actualDateOfCompletion">Actual Date of Completion:</label>
+                <input type="date" id="actualDateOfCompletion" name="actualDateOfCompletion">
+
+                <label for="jobNumber">Job No:</label>
+                <input type="text" id="jobNumber" name="jobNumber">
+
+                <label for="quantityWorkshop">Quantity:</label>
+                <input type="text" id="quantityWorkshop" name="quantityWorkshop" placeholder="Enter Quantity">
+
+                <label for="workshopIncharge">Name of Workshop Incharge:</label>
+                <select id="workshopIncharge" name="workshopIncharge">
+                    <option value="1">Viren Shah</option>
+                    <option value="2">Dipak R Parmar</option>
+                    <option value="3">Jaypal</option>
+                    <!-- Add more workshop incharge options here -->
+                </select>
+
+                <label for="jobOrganizer">Job Organizer:</label>
+                <input type="text" id="jobOrganizer" name="jobOrganizer">
+
+                <label for="materialUsed">Material Used:</label>
+                <input type="text" id="materialUsed" name="materialUsed">
+
+                <label for="jobCompletedDate">Job Completed Date:</label>
+                <input type="date" id="jobCompletedDate" name="jobCompletedDate">
+
+                <button type="submit">Submit Workshop Details</button>
+                <!-- <button type="button" onclick="showForms()">Back to Forms</button> -->
+                <button type="button" onclick="showForms()">Back to Forms</button>
+            </form>
+        </div>
+
+        <!-- <script>
+            function showJobSlipForm() {
+                document.getElementById("jobSlipForm").style.display = "block";
+                document.getElementById("workshopDetailsForm").style.display = "none";
+                document.getElementById("formButtons").style.display = "none";
+            }
+
+            function showWorkshopDetailsForm() {
+                document.getElementById("workshopDetailsForm").style.display = "block";
+                document.getElementById("jobSlipForm").style.display = "none";
+                document.getElementById("formButtons").style.display = "none";
+            }
+
+            function showLoginPage() {
+                document.getElementById("loginPage").style.display = "block";
+                document.getElementById("formButtons").style.display = "none";
+                document.getElementById("jobSlipForm").style.display = "none";
+                document.getElementById("workshopDetailsForm").style.display = "none";
+            }
+
+            function showForms() {
+                document.getElementById("loginPage").style.display = "none";
+                document.getElementById("formButtons").style.display = "block";
+                document.getElementById("jobSlipForm").style.display = "none";
+                document.getElementById("workshopDetailsForm").style.display = "none";
+            }
+        </script> -->
+    </div>
+</body>
+</html>

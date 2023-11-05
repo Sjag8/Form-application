@@ -1,0 +1,92 @@
+  body {
+       font-family: Arial, sans-serif;
+       background-color: #f2f2f2;
+       margin: 0;
+       padding: 0;
+  }
+
+  .container {
+       width: 70%;
+       margin: 0 auto;
+       padding: 20px;
+       background-color: #fff;
+       border: 1px solid #ccc;
+       border-radius: 5px;
+  }
+
+  h1 {
+       text-align: center;
+  }
+
+  label {
+       font-weight: bold;
+       display: block;
+       margin-bottom: 10px;
+  }
+
+  input[type="text"],
+  input[type="date"],
+  select,
+  textarea,
+  input[type="file"] {
+       width: 100%;
+       padding: 10px;
+       margin-bottom: 10px;
+       border: 1px solid #ccc;
+       border-radius: 5px;
+  }
+
+  select {
+       background-color: #fff;
+  }
+
+  button {
+       background-color: #007bff;
+       color: #fff;
+       border: none;
+       padding: 10px 20px;
+       cursor: pointer;
+  }
+
+  h2 {
+       background-color: #007bff;
+       color: #fff;
+       padding: 10px;
+       margin-top: 20px;
+  }
+
+  .container {
+       width: 70%;
+       margin: 0 auto;
+       padding: 20px;
+       background-color: #fff;
+       border: 1px solid #ccc;
+       border-radius: 5px;
+       position: relative;
+       /* Add this for positioning the logo */
+  }
+
+
+  @media (max-width: 768px) {
+       .container {
+            width: 90%;
+       }
+  }
+
+  /* Add this CSS for the logo */
+  #logo {
+       position: Sidebar;
+       top: 20px;
+       right: 20px;
+       width: 100px;
+       /* Adjust the width as needed */
+       height: auto;
+       /* Maintain the aspect ratio */
+  }
+
+
+  a{
+     text-decoration: none;
+     color:White;
+  }
+  
